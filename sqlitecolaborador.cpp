@@ -4,12 +4,11 @@
 
 SqliteColaborador::SqliteColaborador()
 {
-    QString pathname = "file2.db";
-    QFile::remove("*.db");
-    QString path = pathname;
+    QString pathname = "SQLITEdatabase.db";
     mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("prestacao.db");
+    mydb.setDatabaseName(pathname);
     mydb.open();
+
     QSqlQuery query;
     query.exec("CREATE TABLE"
                " db_colaborador (pk_colaborador	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
