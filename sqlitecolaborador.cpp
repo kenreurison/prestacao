@@ -1,10 +1,19 @@
 #include "sqlitecolaborador.h"
+#include "qfile.h"
 
 
 SqliteColaborador::SqliteColaborador()
 {
-    QSqlDatabase mydb = QSqlDatabase();
-    mydb.setDatabaseName("");
+    QString pathname = "file2.db";
+    QFile::remove("*.db");
+    QString path = pathname;
+    mydb = QSqlDatabase::addDatabase("QSQLITE");
+    mydb.setDatabaseName("prestacao.db");
+    mydb.open();
+    QSqlQuery query;
+    query.exec("CREATE TABLE"
+               " db_colaborador (pk_colaborador	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+               "col_nome INTEGER)");
 }
 
 Colaborador SqliteColaborador::colaboradorByID(int id){

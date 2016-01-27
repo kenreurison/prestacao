@@ -9,6 +9,7 @@ class SqliteColaborador : public virtual ColaboradorDAO
 {
 public:
     SqliteColaborador();
+    QSqlDatabase mydb;
     Colaborador colaboradorByID(int id);
     Colaborador colaboradorByEmail(QString email);
     Colaborador colaboradorByNome(QString email);
