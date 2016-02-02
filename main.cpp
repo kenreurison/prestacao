@@ -4,7 +4,7 @@
 #include "qtextstream.h"
 
 
-QString file2String(QString _file){
+QString file2StringList(QString _file){
     QFile inputFile(_file);
     QString result = "";
     if (inputFile.open(QIODevice::ReadOnly))
@@ -17,6 +17,7 @@ QString file2String(QString _file){
        }
        inputFile.close();
     }
+    QStringList listresult.split(";");
     return result;
 }
 
@@ -34,7 +35,8 @@ int main(int argc, char *argv[])
         mydb.setConnectOptions("foreign_keys = ON");
         mydb.open();
         QSqlQuery query(mydb);
-        query.exec(file2String(script));
+        QStringList file2StringList(script)
+        query.exec();
         /*query.exec("CREATE TABLE db_colaborador ("
                        "pk_colaborador	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "
                        "col_nome INTEGER"
