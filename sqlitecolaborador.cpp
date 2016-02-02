@@ -4,15 +4,7 @@
 
 SqliteColaborador::SqliteColaborador()
 {
-    QString pathname = "SQLITEdatabase.db";
-    mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName(pathname);
-    mydb.open();
 
-    QSqlQuery query;
-    query.exec("CREATE TABLE"
-               " db_colaborador (pk_colaborador	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
-               "col_nome INTEGER)");
 }
 
 Colaborador SqliteColaborador::colaboradorByID(int id){
