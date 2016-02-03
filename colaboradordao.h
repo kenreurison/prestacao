@@ -1,14 +1,16 @@
 #ifndef COLABORADORDAO_H
 #define COLABORADORDAO_H
 
+#include <QList>
 #include "colaborador.h"
+#include "list"
 
 class ColaboradorDAO
 {
 public:
-    virtual Colaborador colaboradorByID(int id) = 0;
-    virtual Colaborador colaboradorByNome(QString nome) = 0;
-    virtual Colaborador colaboradorByEmail(QString email) = 0;
+    virtual QList<Colaborador> getAllColaborador() = 0;
+    virtual Colaborador getColaborador(int id);
+    virtual void updateColaborador();
 };
 
 #endif // COLABORADORDAO_H
