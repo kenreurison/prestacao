@@ -1,5 +1,5 @@
 #include <QCoreApplication>
-#include "sqlitecolaborador.h"
+#include "colaboradorSqlite.h"
 #include "qfile.h"
 #include "qtextstream.h"
 #include "QStringList"

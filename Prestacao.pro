@@ -10,12 +10,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     colaborador.cpp \
-    sqlitecolaborador.cpp
+    colaboradorSqlite.cpp
 
 HEADERS += \
     colaborador.h \
     colaboradordao.h \
-    sqlitecolaborador.h
+    colaboradorSqlite.h \
+    colaboradordatabase.h
 
 RESOURCES += \
     myresources.qrc
