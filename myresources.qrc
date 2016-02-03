@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/sqlite/criacao">
+        <file>script/sqliteCreateDatabase.txt</file>
+    </qresource>
+</RCC>

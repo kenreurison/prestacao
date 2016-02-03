@@ -17,3 +17,6 @@ HEADERS += \
     colaboradordao.h \
     sqlitecolaborador.h
 
+RESOURCES += \
+    myresources.qrc
+

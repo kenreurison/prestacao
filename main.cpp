@@ -23,7 +23,6 @@ QStringList file2StringList(QString _file){
     for(int i=0;i<stringList.length()-1; i++){
         ((QString) stringList.at(i)).append(";");
     }
-
     return stringList;
 }
 
@@ -32,10 +31,8 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
     QFile file("SQLITEdatabase.db");
-    //file.remove();
-    QString script("sqliteCreateDatabase.txt");
+    QString script(":/sqlite/criacao/script/sqliteCreateDatabase.txt");
     if(!file.exists()){
-        file.close();
         QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
         mydb.setDatabaseName("SQLITEdatabase.db");
         mydb.setConnectOptions("foreign_keys = ON");

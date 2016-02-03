@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>sqlitescriptcriacao.sql</file>
+    </qresource>
+</RCC>
