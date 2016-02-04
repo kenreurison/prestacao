@@ -1,6 +1,7 @@
 CREATE TABLE db_colaborador (
 	pk_colaborador	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
-	col_nome INTEGER
+        col_nome INTEGER,
+        col_email TEXT
 );
 create table db_transferencia(
 	col_descricao TEXT,
