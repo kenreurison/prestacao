@@ -26,6 +26,11 @@ QStringList file2StringList(QString _file){
     return stringList;
 }
 
+QList<Colaborador> selecionarTodosColaboradores(){
+    ColaboradorDAO *x = new ColaboradorSqlite();
+    QList<Colaborador> result = x->getAllColaborador();
+    return result;
+}
 
 int main(int argc, char *argv[])
 {
@@ -43,5 +48,6 @@ int main(int argc, char *argv[])
             query.exec((QString) stringList.at(i));
         }
     }
+    selecionarTodosColaboradores();
     return a.exec();
 }
