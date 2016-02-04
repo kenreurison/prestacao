@@ -23,9 +23,19 @@ QString Colaborador::getEmail()
     return email;
 }
 
+int Colaborador::getId()
+{
+    return id;
+}
+
 void Colaborador::setNome(QString nome)
 {
     this->nome = nome;
+}
+
+void Colaborador::setId(int id)
+{
+    this->id = id;
 }
 
 void Colaborador::setEmail(QString email)

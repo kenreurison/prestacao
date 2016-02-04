@@ -5,11 +5,15 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 
-class ColaboradorSqlite : public virtual ColaboradorDAO
+class ColaboradorSqlite : public ColaboradorDAO
 {
 public:
     ColaboradorSqlite();
-    ColaboradorSqlite(QSqlDatabase);
+    QList<Colaborador> getAllColaborador();
+    Colaborador getColaborador(int id);
+    bool updateColaborador(Colaborador);
+    bool addColaborador(Colaborador);
+    bool removeColaborador(Colaborador);
 };
 
 #endif // COLABORADORSQLITE_H

@@ -13,10 +13,12 @@ class Colaborador
     public:
         Colaborador();
         Colaborador(int id, QString nome, QString email);
+        int getId();
         QString getNome();
         QString getEmail();
         void setNome(QString);
         void setEmail(QString);
+        void setId(int);
 };
 
 #endif // COLABORADOR_H

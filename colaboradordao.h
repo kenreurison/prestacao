@@ -8,6 +8,7 @@
 class ColaboradorDAO
 {
 public:
+    ColaboradorDAO(){}
     virtual QList<Colaborador> getAllColaborador() = 0;
     virtual Colaborador getColaborador(int id) = 0;
     virtual bool updateColaborador(Colaborador) = 0;
