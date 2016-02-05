@@ -5,8 +5,11 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 
+
 class ColaboradorSqlite : public ColaboradorDAO
 {
+protected:
+    QSqlQuery query;
 public:
     ColaboradorSqlite();
     QList<Colaborador> getAllColaborador();

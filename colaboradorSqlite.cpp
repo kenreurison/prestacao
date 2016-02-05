@@ -1,4 +1,4 @@
-#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QVariant>
 
 
@@ -8,14 +8,12 @@
 
 
 ColaboradorSqlite::ColaboradorSqlite(){
-
+    query = QSqlQuery(ColaboradorDatabase::getInstance());
 }
 
 QList<Colaborador> ColaboradorSqlite::getAllColaborador(){
-    QSqlDatabase db = ColaboradorDatabase::getInstance();
-    QSqlQuery query = QSqlQuery(db);
     QList<Colaborador> *result = new QList<Colaborador>();
-    query.exec("SELECT pk_colaborador, col_nome, col_email FROM  db_colaborador;");
+    query.exec("SELECT pk_colaborador, col_nome, col_email FROM  db_colaborador");
     Colaborador *c = new Colaborador();
     while (query.next()) {
         c->setId(query.value(0).toInt());
@@ -28,7 +26,13 @@ QList<Colaborador> ColaboradorSqlite::getAllColaborador(){
 }
 
 Colaborador ColaboradorSqlite::getColaborador(int id){
-    return Colaborador(id,"Kennedy","kenreurison@gmail.com");
+    query.exec("SELECT pk_colaborador, col_nome, col_email FROM  db_colaborador"
+                  " WHERE pk_colaborador="+QString::number(id));
+    query.next();
+    Colaborador *c = new Colaborador(query.value(0).toInt(),
+                                     query.value(1).toString(),
+                                     query.value(2).toString());
+    return *c;
 }
 
 bool ColaboradorSqlite::removeColaborador(Colaborador){

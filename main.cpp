@@ -32,9 +32,15 @@ QList<Colaborador> selecionarTodosColaboradores(){
     return result;
 }
 
+Colaborador selecionarColaborador(int i){
+    ColaboradorDAO *x = new ColaboradorSqlite();
+    return x->getColaborador(i);
+}
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    selecionarTodosColaboradores();
+    //selecionarTodosColaboradores();
+    Colaborador c = selecionarColaborador(2);
     return a.exec();
 }

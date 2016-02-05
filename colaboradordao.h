@@ -1,6 +1,8 @@
 #ifndef COLABORADORDAO_H
 #define COLABORADORDAO_H
 
+#include <QSqlDatabase>
+#include <QSqlQuery>
 #include <QList>
 #include "colaborador.h"
 #include "list"
