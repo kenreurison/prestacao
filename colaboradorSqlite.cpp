@@ -16,7 +16,7 @@ QList<Colaborador> ColaboradorSqlite::getAllColaborador(){
     QSqlQuery query = QSqlQuery(db);
     QList<Colaborador> *result = new QList<Colaborador>();
     query.exec("SELECT * FROM  db_colaborador");
-    int size = query.size();
+    //int size = query.size();
     Colaborador *c = new Colaborador();
     while (query.next()) {
         c->setId(query.value(0).toInt());
@@ -24,11 +24,13 @@ QList<Colaborador> ColaboradorSqlite::getAllColaborador(){
         c->setEmail(query.value(2).toString());
         result->append(*c);
     }
-
+    return *result;
 }
 
 Colaborador ColaboradorSqlite::getColaborador(int id){
-
+    Colaborador c = Colaborador();
+    c.setId(id);
+    return c;
 }
 
 bool ColaboradorSqlite::removeColaborador(Colaborador){
@@ -40,5 +42,5 @@ bool ColaboradorSqlite::updateColaborador(Colaborador){
 }
 
 bool ColaboradorSqlite::addColaborador(Colaborador){
-
+    return true;
 }
