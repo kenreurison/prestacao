@@ -1,9 +1,9 @@
-#include <QCoreApplication>
+#include <QApplication>
 #include "colaboradorSqlite.h"
 #include "qfile.h"
 #include "qtextstream.h"
 #include "QStringList"
-
+#include "formcolaborador.h"
 
 QStringList file2StringList(QString _file){
     QFile inputFile(_file);
@@ -64,6 +64,12 @@ bool removerColaborador(Colaborador c){
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
+    QApplication a(argc, argv);
+    FormColaborador f;
+    f.show();
+    for(int i=0;i<2;i++){
+        adicionarColaborador("Kennedy","kenreurison@gmail.com");
+        adicionarColaborador("Larissa","larissamoura93@gmail.com");
+    }
     return a.exec();
 }

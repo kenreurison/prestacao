@@ -1,4 +1,3 @@
-QT += core
 QT -= gui
 QT += sql
 
@@ -10,14 +9,19 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     colaborador.cpp \
-    colaboradorSqlite.cpp
+    colaboradorSqlite.cpp \
+    formcolaborador.cpp
 
 HEADERS += \
     colaborador.h \
     colaboradordao.h \
     colaboradorSqlite.h \
-    colaboradordatabase.h
+    colaboradordatabase.h \
+    formcolaborador.h
 
 RESOURCES += \
     myresources.qrc
+
+FORMS += \
+    formcolaborador.ui
 
