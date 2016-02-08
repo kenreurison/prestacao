@@ -6,6 +6,11 @@ Colaborador::Colaborador()
 
 }
 
+Colaborador::Colaborador(QString nome, QString email){
+    this->nome = nome;
+    this->email = email;
+}
+
 Colaborador::Colaborador(int id, QString nome, QString email)
 {
     this->id = id;

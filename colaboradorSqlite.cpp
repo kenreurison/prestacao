@@ -35,14 +35,23 @@ Colaborador ColaboradorSqlite::getColaborador(int id){
     return *c;
 }
 
-bool ColaboradorSqlite::removeColaborador(Colaborador){
-    return true;
+bool ColaboradorSqlite::removeColaborador(Colaborador c){
+    return query.exec("DELETE FROM db_colaborador WHERE pk_colaborador="+QString::number(c.getId()));
 }
 
-bool ColaboradorSqlite::updateColaborador(Colaborador){
-    return true;
+bool ColaboradorSqlite::updateColaborador(Colaborador c){
+
+    QString sql = "UPDATE db_colaborador SET col_nome = \'"+c.getNome()+"\', "
+        "col_email = \'"+c.getEmail()+"\' WHERE pk_colaborador = "+QString::number(c.getId());
+    return query.exec(sql);
+
 }
 
-bool ColaboradorSqlite::addColaborador(Colaborador){
-    return true;
+bool ColaboradorSqlite::addColaborador(Colaborador c){
+    query.prepare("INSERT INTO db_colaborador (col_nome, col_email) "
+                     "VALUES (:col_nome, :col_email)");
+    query.bindValue(":col_nome",c.getNome());
+    query.bindValue(":col_email",c.getEmail());
+    return query.exec();
+
 }

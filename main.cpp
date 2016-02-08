@@ -36,11 +36,34 @@ Colaborador selecionarColaborador(int i){
     ColaboradorDAO *x = new ColaboradorSqlite();
     return x->getColaborador(i);
 }
+bool adicionarColaborador(QString nome, QString email){
+    Colaborador c = Colaborador(nome, email);
+    ColaboradorDAO *x = new ColaboradorSqlite();
+    return x->addColaborador(c);
+//    adicionarColaborador("Kennedy Reurison Lopes", "kenreurison@gmail.com");
+//    adicionarColaborador("Eliabe Silva de Araujo","eliabecivil@gmail.com");
+}
+
+bool modificarColaborador(Colaborador a, Colaborador b){
+    ColaboradorDAO *x = new ColaboradorSqlite();
+    a.setNome(b.getNome());
+    a.setEmail(b.getEmail());
+    return x->updateColaborador(a);
+//    Colaborador x = selecionarColaborador(1);
+//    Colaborador y = Colaborador("Kennedy","kenreurison@hotmail.com");
+//    bool z = modificarColaborador(x,y);
+}
+
+bool removerColaborador(Colaborador c){
+    ColaboradorDAO *x = new ColaboradorSqlite();
+    return x->removeColaborador(c);
+//    Colaborador c();
+//    c.setId(1);
+//    removerColaborador(c);
+}
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    //selecionarTodosColaboradores();
-    Colaborador c = selecionarColaborador(2);
     return a.exec();
 }
