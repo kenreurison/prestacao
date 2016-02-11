@@ -15,15 +15,18 @@ TEMPLATE = app
 SOURCES += main.cpp\
         frmprincipal.cpp \
     colaborador.cpp \
-    colaboradorSqlite.cpp
+    colaboradorSqlite.cpp \
+    frmcolaborador.cpp
 
 HEADERS  += frmprincipal.h \
     colaborador.h \
     colaboradordao.h \
     colaboradorSqlite.h \
-    colaboradordatabase.h
+    colaboradordatabase.h \
+    frmcolaborador.h
 
-FORMS    += frmprincipal.ui
+FORMS    += frmprincipal.ui \
+    frmcolaborador.ui
 
 RESOURCES += \
     myresources.qrc

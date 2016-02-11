@@ -67,9 +67,5 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     frmPrincipal f;
     f.show();
-    for(int i=0;i<50;i++){
-        adicionarColaborador("Kennedy","kenreurison@gmail.com");
-        adicionarColaborador("Larissa","larissamoura93@gmail.com");
-    }
     return a.exec();
 }

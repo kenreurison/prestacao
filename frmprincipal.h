@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::frmPrincipal *ui;
+
+private slots:
+    void openColaboradores();
 };
 
 #endif // FRMPRINCIPAL_H
