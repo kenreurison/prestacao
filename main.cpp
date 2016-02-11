@@ -3,7 +3,7 @@
 #include "qfile.h"
 #include "qtextstream.h"
 #include "QStringList"
-#include "formcolaborador.h"
+#include "frmprincipal.h"
 
 QStringList file2StringList(QString _file){
     QFile inputFile(_file);
@@ -65,9 +65,9 @@ bool removerColaborador(Colaborador c){
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    FormColaborador f;
+    frmPrincipal f;
     f.show();
-    for(int i=0;i<2;i++){
+    for(int i=0;i<10;i++){
         adicionarColaborador("Kennedy","kenreurison@gmail.com");
         adicionarColaborador("Larissa","larissamoura93@gmail.com");
     }
