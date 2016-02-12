@@ -2,4 +2,7 @@
     <qresource prefix="/sqlite/criacao">
         <file>script/sqliteCreateDatabase.txt</file>
     </qresource>
+    <qresource prefix="/banco">
+        <file>script/SQLITEdatabase.db</file>
+    </qresource>
 </RCC>
