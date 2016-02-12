@@ -2,6 +2,7 @@
 #define FRMPRINCIPAL_H
 
 #include <QMainWindow>
+#include "frmcolaborador.h"
 
 namespace Ui {
 class frmPrincipal;

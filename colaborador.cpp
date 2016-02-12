@@ -18,17 +18,17 @@ Colaborador::Colaborador(int id, QString nome, QString email)
     this->email = email;
 }
 
-QString Colaborador::getNome()
+QString Colaborador::getNome() const
 {
     return nome;
 }
 
-QString Colaborador::getEmail()
+QString Colaborador::getEmail() const
 {
     return email;
 }
 
-int Colaborador::getId()
+int Colaborador::getId() const
 {
     return id;
 }

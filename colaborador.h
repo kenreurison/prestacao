@@ -14,9 +14,9 @@ class Colaborador
         Colaborador();
         Colaborador(QString nome, QString email);
         Colaborador(int id, QString nome, QString email);
-        int getId();
-        QString getNome();
-        QString getEmail();
+        int getId() const;
+        QString getNome() const;
+        QString getEmail() const;
         void setNome(QString);
         void setEmail(QString);
         void setId(int);

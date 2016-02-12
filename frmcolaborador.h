@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+#include "QStandardItemModel"
+
 namespace Ui {
 class frmColaborador;
 }
@@ -15,8 +17,12 @@ public:
     explicit frmColaborador(QWidget *parent = 0);
     ~frmColaborador();
 
+public slots:
+    void refreshColaborador();
+
 private:
     Ui::frmColaborador *ui;
+    QStandardItemModel *model;
 };
 
 #endif // FRMCOLABORADOR_H

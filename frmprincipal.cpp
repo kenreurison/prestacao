@@ -1,6 +1,5 @@
 #include "frmprincipal.h"
 #include "ui_frmprincipal.h"
-#include "frmcolaborador.h"
 
 frmPrincipal::frmPrincipal(QWidget *parent) :
     QMainWindow(parent),
