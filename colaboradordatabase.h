@@ -10,12 +10,13 @@ private:
     static ColaboradorDatabase *instance;
     ColaboradorDatabase(){
         mydb = QSqlDatabase::addDatabase("QSQLITE");
+        runSqlDump();
         mydb.setDatabaseName("SQLITEdatabase.db");
         mydb.setConnectOptions("foreign_keys = ON");
         mydb.open();
     }
     void runSqlDump(){
-        QFile *f = new QFile(":/banco/script/SQLITEdatabase.db");
+        QFile *f = new QFile("SQLITEdatabase.db");
         if(!f->exists()){
             QFile::copy(":/banco/script/SQLITEdatabase.db", "SQLITEdatabase.db");
         }
