@@ -30,8 +30,5 @@ public:
     }
 };
 
-//Extremanente necessário essa linha de baixo.
-ColaboradorDatabase *ColaboradorDatabase::instance = 0;
-
 
 #endif // COLABORADORDATABASE_H

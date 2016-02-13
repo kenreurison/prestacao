@@ -2,8 +2,7 @@
 #define FRMCOLABORADOR_H
 
 #include <QDialog>
-
-#include "QStandardItemModel"
+#include <qstandarditemmodel>
 
 namespace Ui {
 class frmColaborador;
@@ -19,6 +18,9 @@ public:
 
 public slots:
     void refreshColaborador();
+
+private slots:
+    void on_tbColaborador_clicked(const QModelIndex &index);
 
 private:
     Ui::frmColaborador *ui;

@@ -16,7 +16,8 @@ SOURCES += main.cpp\
         frmprincipal.cpp \
     colaborador.cpp \
     colaboradorSqlite.cpp \
-    frmcolaborador.cpp
+    frmcolaborador.cpp \
+    colaboradordatabase.cpp
 
 HEADERS  += frmprincipal.h \
     colaborador.h \

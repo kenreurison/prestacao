@@ -1,9 +1,8 @@
 #include <QSqlQuery>
 #include <QVariant>
-
+#include <QFile>
 
 #include "colaboradorSqlite.h"
-#include "qfile.h"
 #include "colaboradordatabase.h"
 
 
@@ -54,4 +53,8 @@ bool ColaboradorSqlite::addColaborador(Colaborador c){
     query.bindValue(":col_email",c.getEmail());
     return query.exec();
 
+}
+
+QString ColaboradorSqlite::getQuery(){
+    return QString("SELECT pk_colaborador, col_nome, col_email FROM  db_colaborador");
 }

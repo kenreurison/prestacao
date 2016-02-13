@@ -16,6 +16,7 @@ public:
     virtual bool updateColaborador(Colaborador) = 0;
     virtual bool addColaborador(Colaborador) = 0;
     virtual bool removeColaborador(Colaborador) = 0;
+    virtual QString getQuery() = 0;
 };
 
 #endif // COLABORADORDAO_H

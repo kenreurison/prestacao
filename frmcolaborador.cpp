@@ -2,6 +2,8 @@
 #include "ui_frmcolaborador.h"
 #include "colaboradordao.h"
 #include "colaboradorSqlite.h"
+#include <qsqlquerymodel.h>
+#include "colaboradordatabase.h"
 
 frmColaborador::frmColaborador(QWidget *parent) :
     QDialog(parent),
@@ -9,12 +11,7 @@ frmColaborador::frmColaborador(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(ui->btnRefresh,SIGNAL(clicked(bool)),this,SLOT(refreshColaborador()));
-    QStringList labels;
-    model = new QStandardItemModel();
-    labels << "ID" << "Nome" << "Email";
-    model->setHorizontalHeaderLabels(labels);
     refreshColaborador();
-    ui->tbColaborador->setModel(model);
 }
 
 frmColaborador::~frmColaborador()
@@ -23,17 +20,26 @@ frmColaborador::~frmColaborador()
 }
 
 void frmColaborador::refreshColaborador(){
-    ColaboradorDAO *c = new ColaboradorSqlite();
-    QList<Colaborador> list = c->getAllColaborador();
-    int listNum = list.size();
-    for (int i = 0; i < listNum; i++) {
-        int id = list.at(i).getId();
-        QString nome = list.at(i).getNome();
-        QString email = list.at(i).getEmail();
-        model->setItem(i,0,new QStandardItem(QString::number(id)));
-        model->setItem(i,1,new QStandardItem(nome));
-        model->setItem(i,2,new QStandardItem(email));
-    }
-
+    QSqlQueryModel *model = new QSqlQueryModel;
+    model->setQuery("SELECT pk_colaborador, col_nome, col_email FROM db_colaborador", ColaboradorDatabase::getInstance());
+    model->setHeaderData(0,Qt::Horizontal, tr("ID"));
+    model->setHeaderData(1,Qt::Horizontal, tr("Nome"));
+    model->setHeaderData(2,Qt::Horizontal, tr("Email"));
     ui->tbColaborador->setModel(model);
+    ui->tbColaborador->setAlternatingRowColors(true);
+    ui->tbColaborador->show();
 }
+
+void frmColaborador::on_tbColaborador_clicked(const QModelIndex &index)
+{
+    refreshColaborador();
+}
+
+
+
+
+
+
+
+
+

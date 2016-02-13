@@ -17,6 +17,7 @@ public:
     bool updateColaborador(Colaborador);
     bool addColaborador(Colaborador);
     bool removeColaborador(Colaborador);
+    QString getQuery();
 };
 
 #endif // COLABORADORSQLITE_H
