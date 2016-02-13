@@ -24,7 +24,6 @@ private slots:
 
 private:
     Ui::frmColaborador *ui;
-    QStandardItemModel *model;
 };
 
 #endif // FRMCOLABORADOR_H

@@ -32,7 +32,16 @@ void frmColaborador::refreshColaborador(){
 
 void frmColaborador::on_tbColaborador_clicked(const QModelIndex &index)
 {
-    refreshColaborador();
+    ui->tbColaborador->model()->index(index.row(),2);
+    QModelIndex id = ui->tbColaborador->model()->index(index.row(),0);
+    QModelIndex nome = ui->tbColaborador->model()->index(index.row(),1);
+    QModelIndex email = ui->tbColaborador->model()->index(index.row(),2);
+    QString strId = ui->tbColaborador->model()->data(id).toString();
+    QString strNome = ui->tbColaborador->model()->data(nome).toString();
+    QString strEmail = ui->tbColaborador->model()->data(email).toString();
+    ui->lineEditID->setText(strId);
+    ui->lineEditNome->setText(strNome);
+    ui->lineEditEmail->setText(strEmail);
 }
 
 
